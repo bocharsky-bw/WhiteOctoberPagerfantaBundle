@@ -31,6 +31,6 @@ before_install:
   - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony=$SYMFONY_VERSION; fi
 
 install:
-  - composer install
+  - travis_retry composer install --prefer-dist
 
 script: php tests.php
